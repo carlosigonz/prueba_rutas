@@ -1,11 +1,11 @@
 {
     "name": "quotes-project",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
+    "version": "1.0.1",
+    "description": "Proyecto backend de botly",
+    "main": "botly.js",
     "scripts": {
-        "start": "node index.js",
-        "dev": "nodemon index.js"
+        "start": "node botly.js",
+        "dev": "nodemon botly.js"
     },
     "keywords": [
         "nodejs"
@@ -13,7 +13,10 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.17.1"
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "express-useragent": "^1.0.15",
+        "morgan": "^1.10.0"
     },
     "devDependencies": {
         "nodemon": "^1.19.3"
