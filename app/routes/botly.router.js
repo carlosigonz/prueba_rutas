@@ -7,6 +7,7 @@ const Router = require("express").Router();
 const {
     BotlyTestController,
     BotlyHelloController,
+    createUserController,
 } = require("../controllers/botly_test.controller");
 
 /**
@@ -26,5 +27,13 @@ Router.get("/v1/postman_test", BotlyTestController);
  * @param {String} password - contrasena del usuario de botly
  */
 Router.get("/v1/postman_hello", BotlyHelloController);
+
+/**
+ * @version             :1.0.0
+ * @description         :Servicio para insetar un usuario en la base de datos
+ * @method              :post
+ * @type                :body
+ */
+Router.post("/v1/create_user", createUserController);
 
 module.exports = Router;
