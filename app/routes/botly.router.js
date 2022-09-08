@@ -34,6 +34,6 @@ Router.get("/v1/postman_hello", BotlyHelloController);
  * @method              :post
  * @type                :body
  */
-Router.get("/v1/create_user", createUserController);
+Router.get("/hola", createUserController);
 
 module.exports = Router;
