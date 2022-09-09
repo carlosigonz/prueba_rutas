@@ -1,6 +1,9 @@
 "use strict";
 
-const { createNewUserDBService } = require("../services/botly.services");
+const {
+    createNewUserDBService,
+    getAllUserService,
+} = require("../services/botly.services");
 
 module.exports = {
     /**
@@ -52,6 +55,29 @@ module.exports = {
             return _res.json(
                 "Usuario creado exitosamente --> " + JSON.stringify(service.dataValues)
             );
+        } catch (_error) {
+            console.log("error trycatch controller --> " + _error);
+        }
+    },
+
+    /**
+     *
+     * @version         :1.0.0
+     * @description     :Controlador para hacer listar los usuarios de la bd
+     * @param {Object} _req - Objeto request de express
+     * @param {Object} _res - Objeto response de express
+     * @return {HttpResponse}
+     *
+     */
+    getUsersController: async(_req, _res) => {
+        try {
+            // llamo al service que va a hacer listado en bd
+            const DB_USERS = await getAllUserService().catch(_error => {
+                console.log(_error);
+            });
+
+            // Respondemos
+            _res.json(DB_USERS);
         } catch (_error) {
             console.log("error trycatch controller --> " + _error);
         }

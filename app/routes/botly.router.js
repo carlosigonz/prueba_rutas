@@ -8,6 +8,7 @@ const {
     BotlyTestController,
     BotlyHelloController,
     createUserController,
+    getUsersController,
 } = require("../controllers/botly_test.controller");
 
 /**
@@ -35,5 +36,13 @@ Router.get("/v1/postman_hello", BotlyHelloController);
  * @type                :body
  */
 Router.post("/v1/create_user", createUserController);
+
+/**
+ * @version             :1.0.0
+ * @description         :Servicio para saludar
+ * @method              :get
+ * @type                :body
+ */
+Router.get("/v1/users", getUsersController);
 
 module.exports = Router;
